@@ -1,24 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="time" value="${ System.currentTimeMillis() }"/>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js?${ time }"></script>
     <script type="text/javascript">
+    
+    
     idChkInput = function() {
         let userId = $("#member_id").val();
 
         if($.trim(userId).length > 16){
-            let warningTxt = "<font color=\"red\">아이디는 16글자 이하여야 합니다.</font>";
+            let warningTxt = "<font color='red'>아이디는 16글자 이하여야 합니다.</font>";
             $("#idcheck").html(warningTxt);
             return false;
         }
 
         if($.trim(userId).length < 4){
-            let warningTxt = "<font color=\"red\">아이디는 4글자 이상이어야 합니다.</font>";
+            let warningTxt = "<font color='red'>아이디는 4글자 이상이어야 합니다.</font>";
             $("#idcheck").html(warningTxt);
             return false;
         }
@@ -34,9 +37,9 @@
             success : function(data){
                 let ajaxTxt = "";
                 if(data.trim() == 1){
-                    ajaxTxt = "<font color=\"red\">중복된 아이디입니다.</font>";
+                    ajaxTxt = "<font color='red'>중복된 아이디입니다.</font>";
                 }else{
-                    ajaxTxt = "<font color=\"blue\">사용 할 수 있는 아이디입니다.</font>";
+                    ajaxTxt = "<font color='blue'>사용 가능한 아이디입니다.</font>";
                 }
                 $("#idcheck").html(ajaxTxt);
             },

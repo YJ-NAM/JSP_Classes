@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+long time = System.currentTimeMillis();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,7 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js?<%= time %>"></script>
 <script>
 	$(function() {
 		// 회원가입 폼 페이지에서 아이디중복체크라는 버튼에 마우스가 올라갔을 때 호출되는 무명함수
@@ -16,7 +19,7 @@
 			let userId = $("#member_id").val();
 			
 			// 입력 길이 체크 - 4자 이상 조건
-			if($.trim($("#member_id").val()).length < 4){
+		 	if($.trim($("#member_id").val()).length < 4){
 				let warningTxt = '<font color="red"> 아이디는 4자 이상이어야 합니다. </font>';
 				$("#idcheck").text(""); // span 태그 영역 초기화
 				$("#idcheck").show();
