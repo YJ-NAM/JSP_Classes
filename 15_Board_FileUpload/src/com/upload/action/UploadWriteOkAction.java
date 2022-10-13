@@ -23,7 +23,7 @@ public class UploadWriteOkAction implements Action {
 		
 		// 파일 업로드 시 설정 내용 필요
 		// 1. 파일 저장 경로 지정
-		String saveFolder = "C:\\NCS\\workspace(jsp)\\15_Board_FileUpload\\WebContent\\upload";
+		String saveFolder = "C:\\Users\\user1\\git\\JSP_Classes\\15_Board_FileUpload\\WebContent\\upload";
 		// 2. 첨부 파일 크기 저장
 		int fileSize = 10 * 1024 * 1024; // 10MB // (1024)kb*(1024)kb = mb
 		// 3. MultipartRequest 객체 생성

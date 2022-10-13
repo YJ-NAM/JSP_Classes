@@ -62,7 +62,7 @@ public class UploadController extends HttpServlet {
 		 */
 		
 		FileInputStream fis = 
-			new FileInputStream("C:\\NCS\\workspace(jsp)\\15_Board_FileUpload\\src\\com\\upload\\controller\\mapping.properties");
+			new FileInputStream("C:\\Users\\user1\\git\\JSP_Classes\\15_Board_FileUpload\\src\\com\\upload\\controller\\mapping.properties");
 		
 		pro.load(fis);
 		
