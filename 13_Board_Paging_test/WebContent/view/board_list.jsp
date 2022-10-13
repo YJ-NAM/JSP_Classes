@@ -161,7 +161,7 @@
 				<c:forEach items="${ List }" var="dto">
 					<tr>
 						<td>${ dto.board_no }</td>
-						<td><a href="${ pageContext.request.contextPath }/board_content.do?no=${ dto.board_no }&page=${ page }">${ dto.board_title }</a></td>
+						<td><a href="<%= request.getContextPath() %>/board_content.do?no=${ dto.board_no }&page=${ page }">${ dto.board_title }</a></td>
 						<td>${ dto.board_hit }</td>
 						<td>${ dto.board_date.substring(0,10) }</td>
 					</tr>
@@ -207,7 +207,7 @@
 		<br />
 		<div class="row" style="width: 30em">
    			<div class="col-lg">
-				<form action="${ pageContext.request.contextPath }/board_search.do" method="post">
+				<form action="<%= request.getContextPath() %>/board_search.do" method="post">
 				 <div class="input-group list-search-form w-70">
 					<select name="search" class="custom-select col-xs-2">
 						<option value="all"<c:if test='${field eq "all"}'> selected="selected"</c:if>>전체</option>

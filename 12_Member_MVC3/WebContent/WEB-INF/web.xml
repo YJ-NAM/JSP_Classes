@@ -18,7 +18,7 @@
   
   <!-- *.do로 들어오면 com.member.controller.FrontController로 보내라  -->
   <servlet-mapping>
-  	<servlet-name>FrontController</servlet-name> 
+  	<servlet-name>FrontController</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>
