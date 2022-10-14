@@ -35,19 +35,21 @@ public class AdminLoginSaveAction implements Action {
 		if(check > 0) { 
 			// 관리자인 경우, 관리자 정보 받기
 			AdminDTO dto = dao.getAdmin(admin_id);
-			// 세션에 저장~!
-			session.setAttribute("adminInfo", dto);
 			
+			// 세션에 저장~!
+			session.setAttribute("adminId", dto.getAdmin_id());
+			session.setAttribute("adminName", dto.getAdmin_name());
+			session.setAttribute("msg", "<script> alert('로그인 성공!'); </script>");
+			
+			// With a admin info saved in session area, move to the view page you set.
+			forward.setPath("admin/admin_main.jsp");
+			forward.setRedirect(false);			
 			
 		}else if(check == -1) { // 비번 틀린 경우
-			
+			out.println("<script> alert('비밀번호를 다시 확인해주세요.'); history.back(); </script>");
 		}else { // 둘 다 틀린 경우
-			
+			out.println("<script> alert('존재하지 않는 아이디입니다..'); history.back(); </script>");
 		}
-		
-		forward.setPath(path);
-		forward.setRedirect(isRedirect);
-		
 		return forward;
 	}
 
