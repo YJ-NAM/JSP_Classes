@@ -20,7 +20,7 @@ public class AdminProductInputSaveAction implements Action {
 		// 상품 등록 폼에서 받은 데이터를 DB에 저장
 		
 		// 첨부파일이 저장될 위치(경로) 설정
-		String saveFolder = "C:\\Users\\user1\\git\\JSP_Classes\\17_ShoppingMall\\WebContent\\uploadFile";
+		String saveFolder = "C:\\Users\\user1\\git\\JSP_Classes\\17_ShoppingMall\\WebContent\\upload";
 		
 		// 첨부파일 용량(크기) 제한 - 파일 업로드 최대 크기
 		int filesize = 10*1024*1024; // 10MB
