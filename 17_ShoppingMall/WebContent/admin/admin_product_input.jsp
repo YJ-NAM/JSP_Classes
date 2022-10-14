@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="../include/admin_top.jsp" />
 	<hr />
-	<h4><b>상품 등록 페이지</b></h4>
+	<h4>상품 등록 페이지</h4>
 	<hr />
 
 	<form method="post" enctype="multipart/form-data"
@@ -62,7 +62,7 @@
 			</td>
 		</tr>	
 		<tr class="align-middle">
-			<th>사양</th>
+			<th>분류</th>
 			<td>
 				<select name="p_spec" id="" class="form-select">
 					<option value="none" selected>일반</option>

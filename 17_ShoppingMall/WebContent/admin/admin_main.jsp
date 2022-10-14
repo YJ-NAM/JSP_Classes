@@ -33,8 +33,8 @@
 </style>
 </head>
 <body>
-<%--  	${ msg }
-	<c:remove var="msg" /> --%>
+	${ msg }
+	<c:remove var="msg" />
 	
 	<jsp:include page="../include/admin_top.jsp" />
 	<ul class="nav nav-pills nav-fill justify-content-center">

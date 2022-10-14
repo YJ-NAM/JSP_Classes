@@ -64,7 +64,6 @@ public class AdminProductInputSaveAction implements Action {
 		}else {
 			out.println("<script> alert('상품 등록 실패'); history.back(); </script>");
 		}
-		
 		return forward;
 	}
 

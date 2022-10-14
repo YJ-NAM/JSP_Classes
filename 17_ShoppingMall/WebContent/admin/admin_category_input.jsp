@@ -8,18 +8,18 @@
 </head>
 <body>
 	<jsp:include page="../include/admin_top.jsp" />
-	<hr width=""/>
+	<hr />
 	<h4>폼 페이지</h4>
-	<hr width=""/>
+	<hr />
 	<form action="${ pageContext.request.contextPath }/admin_category_input_save.do">
 		<table class="table align-items-center">
-			<tr>
-				<th scope="row" class="align-middle">카테고리 코드</th>
-				<td><input class="form-control" type="text" name="category_code" /></td>
+			<tr >
+				<th scope="row" class="align-middle col-3">카테고리 코드</th>
+				<td ><input class="form-control" type="text" name="category_code" placeholder="코드" /></td>
 			</tr>
-			<tr>
+			<tr >
 				<th scope="row" class="align-middle">카테고리 이름</th>
-				<td><input class="form-control" type="text" name="category_name" /></td>
+				<td><input class="form-control" type="text" name="category_name" placeholder="이름"  /></td>
 			</tr>
 			<tr>
 				<td colspan="2">

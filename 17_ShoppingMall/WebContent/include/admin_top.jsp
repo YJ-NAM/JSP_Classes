@@ -22,6 +22,10 @@ body {
 	margin: 0 auto;
 }
 
+body h4 {
+	font-weight: bolder;
+}
+
 hr {
 	margin: 10px;
 }
