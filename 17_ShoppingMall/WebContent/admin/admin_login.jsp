@@ -28,7 +28,7 @@
 		<h3>쇼핑몰 메인 페이지</h3>
 		<hr />
 		<br />
-		<form method="post" action="${ pageContext.request.contextPath }/admin_login.do">
+		<form method="post" action="${ pageContext.request.contextPath }/admin_login_save.do">
 			<table class="table">
 				<tr>
 					<th>아이디</th>
