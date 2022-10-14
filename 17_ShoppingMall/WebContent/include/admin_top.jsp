@@ -49,6 +49,11 @@ table tr th, td {
 a {
 	text-decoration: none;
 }
+
+p {
+	font-size: 13px;
+	
+}
 </style>
 </head>
 <body>

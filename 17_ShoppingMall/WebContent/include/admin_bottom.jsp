@@ -12,6 +12,7 @@
 	<hr />
 	<br />
 	<p>주소 : 서울특별시 중구 남대문로 120 대일빌딩 2F, 3F</p>
+	<p>All rights reserved.</p>
 	</div>
 </body>
 </html>

@@ -127,4 +127,34 @@ public class CategoryDAO {
 		}
 		return list;
 	} // getCategoryList() 종료
+	
+	/////////////////////////////////////////////////////////////
+	// 선택된 번호의 카테고리 삭제 + 번호 재작업
+	/////////////////////////////////////////////////////////////
+	public int deleteCategory(int no) {
+		
+		int result = 0;
+		openConn();
+		
+		try {
+			sql = "delete from shop_category where category_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			result = pstmt.executeUpdate();
+			
+			sql = "update shop_category set category_num = category_num - 1 where category_num > ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+
+		return result;
+		
+	} // deleteCategory() 종료
 }
