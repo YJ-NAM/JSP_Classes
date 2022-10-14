@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="../include/admin_top.jsp" />
 	<hr />
-	<h3>상품 등록 페이지</h3>
+	<h4><b>상품 등록 페이지</b></h4>
 	<hr />
 
 	<form method="post" enctype="multipart/form-data"
@@ -19,13 +19,13 @@
 		<tr class="align-middle">
 			<th>상품명</th>
 			<td>
-				<input class="form-control" type="text" name="p_name" />
+				<input class="form-control" type="text" name="p_name" placeholder="상품명"/>
 			</td>
 		</tr>
 		<tr class="align-middle">
 			<th>카테고리 코드</th>
 			<td>
-				<select name="p_category" class="form-control">
+				<select name="p_category" class="form-select">
 					<c:if test="${ empty categoryList }">
 						<option value="">::: No data :::</option>
 					</c:if>
@@ -40,7 +40,7 @@
 		<tr class="align-middle">
 			<th>제조사</th>
 			<td>
-				<input class="form-control" type="text" name="p_company" />
+				<input class="form-control" type="text" name="p_company" placeholder="제조사"/>
 			</td>
 		</tr>
 		<tr class="align-middle">
@@ -58,13 +58,13 @@
 		<tr class="align-middle">
 			<th>가격</th>
 			<td>
-				<input class="form-control" type="number" name="p_price" maxlength="8" />
+				<input class="form-control" type="number" name="p_price" maxlength="8" placeholder="가격" />
 			</td>
 		</tr>	
 		<tr class="align-middle">
 			<th>사양</th>
 			<td>
-				<select name="p_spec" id="" class="form-control">
+				<select name="p_spec" id="" class="form-select">
 					<option value="none" selected>일반</option>
 					<option value="hit">인기</option>
 					<option value="new">신상</option>
@@ -75,13 +75,13 @@
 		<tr class="align-middle">
 			<th>제품 소개</th>
 			<td>
-				<textarea rows="7" cols="25" name="p_content" class="form-control"></textarea>
+				<textarea rows="7" cols="25" name="p_content" class="form-control" placeholder="제품 소개"></textarea>
 			</td>
 		</tr>			
 		<tr class="align-middle">
 			<th>상품 포인트</th>
 			<td>
-				<input class="form-control" name="p_point" />
+				<input class="form-control" name="p_point" placeholder="포인트" />
 			</td>
 		</tr>
 		<tr class="align-middle">
