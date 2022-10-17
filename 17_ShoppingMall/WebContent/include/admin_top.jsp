@@ -48,6 +48,7 @@ table {
 
 table tr th, td {
 	text-align: center;
+	border-bottom: 1px solid lightgray;
 } 
 
 a {
@@ -56,7 +57,6 @@ a {
 
 p {
 	font-size: 13px;
-	
 }
 </style>
 </head>

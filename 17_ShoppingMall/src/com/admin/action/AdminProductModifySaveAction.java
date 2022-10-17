@@ -10,24 +10,22 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.shop.controller.Action;
 import com.shop.controller.ActionForward;
+import com.shop.model.CategoryDAO;
 import com.shop.model.ProductDAO;
 import com.shop.model.ProductDTO;
 
-public class AdminProductInputSaveAction implements Action {
+public class AdminProductModifySaveAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		// 상품 등록 폼에서 받은 데이터를 DB에 저장
-		
 		// 첨부파일이 저장될 위치(경로) 설정
+		
 		String saveFolder = "C:\\Users\\user1\\git\\JSP_Classes\\17_ShoppingMall\\WebContent\\upload";
 		
 		// 첨부파일 용량(크기) 제한 - 파일 업로드 최대 크기
 		int filesize = 10*1024*1024; // 10MB
 		MultipartRequest multi = new MultipartRequest
 				(request, saveFolder, filesize, "UTF-8", new DefaultFileRenamePolicy());
-		
-		int p_num = Integer.parseInt(multi.getParameter("p_num"));
 		
 		// 넘어온 데이터 받아주기
 		String p_name = multi.getParameter("p_name").trim();
@@ -41,11 +39,7 @@ public class AdminProductInputSaveAction implements Action {
 		
 		// getFilesystemName()
 		// ==> 업로드 된 파일 이름을 문자열로 반환해주는 메서드
-		String p_image = multi.getFilesystemName("p_image_new");
-		
-		if(p_image == null) {
-			p_image = multi.getParameter("p_image_old");
-		}
+		String p_image = multi.getFilesystemName("p_image"); 
 		
 		ProductDTO dto = new ProductDTO();
 		dto.setPname(p_name);
@@ -59,7 +53,7 @@ public class AdminProductInputSaveAction implements Action {
 		dto.setPoint(p_point);
 		
 		ProductDAO dao = ProductDAO.getInstance();
-		int check = dao.updateProduct(dto);
+		int check = dao.insertProduct(dto);
 		
 		ActionForward forward = new ActionForward();
 		PrintWriter out = response.getWriter();
