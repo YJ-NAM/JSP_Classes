@@ -129,7 +129,6 @@ public class ShopController extends HttpServlet {
 			forward.setPath(value);
 		}
 		
-		
 		if(forward != null) {
 			if(forward.isRedirect()) {  // true인 경우
 				response.sendRedirect(forward.getPath());

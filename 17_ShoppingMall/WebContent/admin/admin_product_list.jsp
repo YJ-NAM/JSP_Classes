@@ -16,7 +16,6 @@
 	<h4>SHOP_PRODUCTS 제품 전체 리스트</h4>
 	<hr />
 	
-	<hr />
 	<table class="table align-middle">
 		<tr>
 			<th scope="col">제품No</th>

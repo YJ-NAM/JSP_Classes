@@ -188,7 +188,7 @@ public class ProductDAO {
 		
 		try {
 			sql = "update shop_products set pimage = ?, pqty = ?, price = ?, pspec = ?, "
-			+ "pcontents = ?, point = ? where pnum = ?";
+			+ "pcontents = ?, point = ?, pname = ? where pnum = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, dto.getPimage());
 			pstmt.setInt(2, dto.getPqty());
@@ -196,7 +196,8 @@ public class ProductDAO {
 			pstmt.setString(4, dto.getPspec());
 			pstmt.setString(5, dto.getPcontents());
 			pstmt.setInt(6, dto.getPoint());
-			pstmt.setInt(7, dto.getPnum());
+			pstmt.setString(7, dto.getPname());
+			pstmt.setInt(8, dto.getPnum());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -205,6 +206,33 @@ public class ProductDAO {
 			closeConn(rs, pstmt, con);
 		}
 		return result;
-	}
+	} // updateProduct() 종료
+	
+	/////////////////////////////////////////////////////////////
+	// 제품 삭제 + 번호 재작업
+	/////////////////////////////////////////////////////////////
+	public int deleteProduct(int pnum) {
+		int result = 0;
+		openConn();
+		
+		try {
+			sql = "delete from shop_products where pnum = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, pnum);
+			result = pstmt.executeUpdate();
+			
+			sql = "update shop_products set pnum = pnum - 1 where pnum > ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, pnum);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return result;
+	} // deleteProduct() 종료
 	
 }

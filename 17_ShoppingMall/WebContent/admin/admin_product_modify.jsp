@@ -11,13 +11,17 @@
 <body>
 	<jsp:include page="../include/admin_top.jsp" />
 	<hr />
-	<h4>SHOP_PRODUCTS 제품 수정 페이지</h4>
+	<h4>${ dto.pname } 제품 수정 페이지</h4>
 	<hr />
 	<br />
 	
 	<form action="${ pageContext.request.contextPath }/admin_product_modify_save.do" enctype="multipart/form-data" method="post">
 	<input type="hidden" name="p_num" value="${ dto.pnum }" />
 	<table class="table align-middle">
+		<tr>
+			<th>이름</th>
+			<td><input type="text" class="form-control" name="p_name" value="${ dto.pname }" /></td>
+		</tr>
 		<tr>
 			<th>카테고리 코드</th>
 			<td><input type="text" class="form-control" name="p_category" value="${ dto.pcategory_fk }" readonly="readonly" /></td>
@@ -29,13 +33,13 @@
 		<tr>
 			<th>이미지</th>
 			<td>
-				<c:if test="${ !empty dto.pimage }">
+				<input type="hidden" name="p_image_old" value="${ dto.pimage }" />
+				<c:if test="${ !empty dto.pimage }"> <!-- 기존 이미지 있으면 -->
 					<p><img src="${ pageContext.request.contextPath }/upload/${ dto.pimage }" class="w-50 h-50" alt="" /></p>
 				</c:if>
 				<input type="file" class="form-control" name="p_image_new" />
 				<%-- 이미지를 수정하지 않고 그대로 제품수정 버튼을 누를 시 
 				등록 이미지를 그대로 사용해서 히든으로 넘겨줄 예정 --%>
-				<input type="hidden" name="p_image_old" value="${ dto.pimage }" />
 			</td>
 		</tr>
 		<tr>
@@ -44,7 +48,7 @@
 		</tr>
 		<tr>
 			<th>가격</th>
-			<td><input type="text" class="form-control" name="p_price" value="${ dto.price }원" /></td>
+			<td><input type="text" class="form-control" name="p_price" value="${ dto.price }" /></td>
 		</tr>	
 		<tr>
 			<th>분류</th>
@@ -63,7 +67,7 @@
 		</tr>							
 		<tr>
 			<th>포인트</th>
-			<td><input type="text" class="form-control" name="p_point" value="${ dto.point }점" /></td>
+			<td><input type="text" class="form-control" name="p_point" value="${ dto.point }" /></td>
 		</tr>	
 		<tr>
 			<td colspan="2">

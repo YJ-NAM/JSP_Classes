@@ -27,7 +27,6 @@
 	
 	.nav-link {
 		text-decoration: none !important;
-		color : pink !important;
 	}
 	
 </style>
@@ -39,13 +38,13 @@
 	<jsp:include page="../include/admin_top.jsp" />
 	<ul class="nav nav-pills nav-fill justify-content-center">
 		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="${ pageContext.request.contextPath }/admin_category_input.do">쇼핑 카테고리 등록</a>
+			<a class="btn btn-outline-primary" aria-current="page" href="${ pageContext.request.contextPath }/admin_category_input.do">카테고리 등록</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="${ pageContext.request.contextPath }/admin_category_list.do">쇼핑 카테고리 리스트</a>
+			<a class="btn btn-outline-success" aria-current="page" href="${ pageContext.request.contextPath }/admin_category_list.do">카테고리 목록</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="${ pageContext.request.contextPath }/admin_product_input.do">쇼핑 상품 등록</a>
+			<a class="btn btn-outline-info" aria-current="page" href="${ pageContext.request.contextPath }/admin_product_input.do">상품 등록</a>
 		</li>
 	</ul>
 	<jsp:include page="../include/admin_bottom.jsp" />

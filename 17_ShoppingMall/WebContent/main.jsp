@@ -13,6 +13,7 @@
 </head>
 <body>
 	<div align="center">
+		${ logoutMsg }
 		<hr />
 		<h3>쇼핑몰 메인 페이지</h3>
 		<hr />
