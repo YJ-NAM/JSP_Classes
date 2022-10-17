@@ -15,11 +15,13 @@
 	integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
 	crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js?${ time }"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <style>
 
 body {
 	width: 800px;
 	margin: 0 auto;
+	font-family: 'Poppins', sans-serif;
 }
 
 body h4 {
