@@ -38,12 +38,25 @@
 		padding: 10px;
 	}
 	
+	#welcome {
+		vertical-align: sub;
+	}
+	
 	a {
 		text-decoration: none;
 	}
 	
 	.top {
-		font-size: 1.5em;
+		font-size: 2em;
+		font-weight: normal;
+		cursor: pointer;
+		vertical-align: middle;
+	}
+	
+	.top:hover {
+		background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	
 	img {
@@ -69,13 +82,11 @@
 <body>
 	<div align="center">
 		<table class="table">
-			<tr>
-				<td colspan="2" class="align-middle" align="center" >
-					<a href="${ pageContext.request.contextPath }/user_main.do">
-						<span class="top material-symbols-outlined">home</span></a>&nbsp;&nbsp;&nbsp;
-					<a href="${ pageContext.request.contextPath }/user_cart_list.do">
-						<span class="top material-symbols-outlined">shopping_cart</span></a>&nbsp;&nbsp;&nbsp;
-					<span> ${ userName }님 환영합니다.</span>&nbsp;&nbsp;&nbsp;
+			<tr class="align-middle" >
+				<td colspan="2" align="right" >
+					<span id="welcome"><b>${ userName }</b>님 환영합니다.</span>&nbsp;&nbsp;&nbsp;
+					<span onclick="location.href='${ pageContext.request.contextPath }/user_main.do'" class="top material-symbols-outlined">home</span>&nbsp;&nbsp;&nbsp;
+					<span onclick="location.href='${ pageContext.request.contextPath }/user_cart_list.do'"class="top material-symbols-outlined">shopping_cart</span>&nbsp;&nbsp;&nbsp;
 					<a class="btn btn-outline-danger btn-sm" href="${ pageContext.request.contextPath }/user_logout.do">Logout</a>
 				</td>
 			</tr>
