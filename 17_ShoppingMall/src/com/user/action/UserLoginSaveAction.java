@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.shop.controller.Action;
 import com.shop.controller.ActionForward;
 import com.shop.model.UserDAO;
+import com.shop.model.UserDTO;
 
 public class UserLoginSaveAction implements Action {
 
@@ -25,15 +26,18 @@ public class UserLoginSaveAction implements Action {
 		ActionForward forward = new ActionForward();
 		PrintWriter out = response.getWriter();
 		
-		if(check > 0) {
-			dao.getMember(user_id);
+		if(check > 0) { // 회원인 경우
+			UserDTO dto = dao.getMember(user_id);
 			HttpSession session = request.getSession();
-			session.setAttribute("", "");
+			session.setAttribute("userId", dto.getMemid());
+			session.setAttribute("userName", dto.getMemname());
 			forward.setRedirect(true);
-			forward.setPath("");			
-		}else if(check == -1) {			
-			
-		}
-		return null;
+			forward.setPath("user_main.do");	
+		}else if(check == -1) { // 비번 틀린 경우	
+			out.println("<script> alert('비밀번호를 다시 확인해주세요.'); history.back(); </script>");
+		}else { // 회원이 아닌 경우
+			out.println("<script> alert('아이디를 다시 확인해주세요.'); history.back(); </script>");
+		}		
+		return forward;
 	}
 }

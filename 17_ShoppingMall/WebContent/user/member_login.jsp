@@ -19,7 +19,6 @@
 	}
 </style>
 <body>
-
 	<div align="center">
 		<hr />
 		<h3>User Login Page</h3>
@@ -27,7 +26,7 @@
 		<br />
 		<form method="post" action="${ pageContext.request.contextPath }/user_login_save.do">
 			<table class="table align-middle">
-				<tr col-3>
+				<tr class="col-3">
 					<th scope="row">User Id</th>
 					<td>
 						<input type="text" class="form-control" placeholder="ID" name="user_id" />
@@ -48,6 +47,5 @@
 			</table>
 		</form>
 	</div>
-
 </body>
 </html>
