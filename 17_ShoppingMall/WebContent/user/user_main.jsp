@@ -11,20 +11,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js?${ time }"></script>
-<style>
-	body {
-		margin: 0 auto;
-		text-align: center;
-		width: 800px;
-	}
-	table {
-		border: 1px solid lightgray;
-	}
-
-	table tr th, td {
-		padding: 10px;
-	}
-</style>
 </head>
 <body>
 	<jsp:include page="../include/user_top.jsp" />
@@ -34,30 +20,26 @@
 		<h4>Product Lists</h4>
 		<hr />
 		
-		<c:if test="${ empty list }">
-			<span>제품 목록이 없습니다...</span>
-		</c:if>
-		<c:if test="${ !empty list }">
-		<table class="table align-middle">
-			<tr>
-			<c:forEach items="${ list }" var="dto" >
-				<c:set var="count" value="${ count + 1 }"/>
-				<td>
-				<a href="${ pageContext.request.contextPath }/user_product.do?pnum=${ dto.pnum }">
-					<img src="${ pageContext.request.contextPath }/upload/${ dto.pimage }"
-					width="50" height="50" />
-				</a>
-				<br />${ dto.pname }<br />
-				<fmt:formatNumber value="${ dto.price }"/>원<br />
-				<fmt:formatNumber value="${ dto.point }" var="commaPoint" /> [${ commaPoint }] 포인트<br />
-				</td>
-				<c:if test="${ count%3 == 0 }">
-					<tr></tr>
-				</c:if>
+		<div class="row row-cols-1 row-cols-md-3">
+			<c:if test="${ empty productList }">
+			<span>No data</span>
+			</c:if>
+			<c:if test="${ !empty productList }">
+			<c:forEach items="${ productList }" var="dto" >
+				<div class="col mb-4 text-bg-light mb-3">
+			 		<div class="card h-100" style="width: 1fr;" >
+					  <img src="${ pageContext.request.contextPath }/upload/${ dto.pimage }" class="card-img-top" alt="">
+					  <div class="card-body">
+					    <h5 class="card-title">${ dto.pname }</h5>
+					    <p class="card-text">${ dto.pcontents }</p>
+					    <p class="card-text"><b><fmt:formatNumber value="${ dto.price }"/>원</b>
+					    <small id="point"><fmt:formatNumber value="${ dto.point }" var="commaPoint" /> [${ commaPoint }]포인트</small></p>
+					    <a href="${ pageContext.request.contextPath }/user_product.do?pnum=${ dto.pnum }" class="btn btn-primary">상세정보</a>
+					  </div>
+					</div>
+				</div>
 			</c:forEach>
-			</tr>
-		</table>
-		</c:if>
+			</c:if>
 		</div>
 	<jsp:include page="../include/user_bottom.jsp" />
 </body>

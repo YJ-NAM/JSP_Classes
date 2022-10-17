@@ -17,9 +17,9 @@ public class UserMainAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 제품 전체 리스트를 DB에서 조회하여 view page로 이동시키는 비지니스 로직
 		ProductDAO dao = ProductDAO.getInstance();
-		List<ProductDTO> productList = dao.getProductList();
+		List<ProductDTO> list = dao.getProductList();
 		
-		request.setAttribute("list", productList);
+		request.setAttribute("productList", list);
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
