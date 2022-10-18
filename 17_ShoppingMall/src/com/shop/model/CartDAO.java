@@ -139,5 +139,32 @@ public class CartDAO {
 		return list;		
 	} // getCartList(id) 종료
 	
+	/////////////////////////////////////////////////////////////
+	// 번호에 해당하는 장바구니 목록 삭제
+	/////////////////////////////////////////////////////////////
+	public int deleteCart(int no) {
+		int result = 0;
+		openConn();
+		
+		try {
+			sql = "delete from shop_cart where cart_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			result = pstmt.executeUpdate();
+			
+			sql = "update shop_cart set cart_num = cart_num - 1 where cart_num > ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return result;
+	} // deleteCart() 종료
+	
 
 }

@@ -83,7 +83,33 @@
 	
 	/* 아이콘 버튼 */
 	.iconBtn {
-		vertical-align: middle;
+		vertical-align: baseline;
+	}
+	
+	/* 오른쪽 가운데 테이블  */
+	#nav-table {
+		width: 700px;
+	}
+	
+	/* 왼쪽 메뉴바 */
+	.sideTable {
+		width: 200px;
+	}
+	
+	.sideTable tr:nth-child(1) {
+		background-color: rgba(48, 207, 208, 0.5);
+
+	}
+	
+	.sideTable #categoryCode {
+		font-size: 1.3em;
+		font-weight: bolder;
+	}
+	
+	#potter {
+		background: linear-gradient(to right top, #30CFD0 0%, #330867 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	
 </style>
@@ -100,10 +126,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<table class="table" >
+				<td width="200px">
+					<table class="sideTable table" >
 						<tr>
-							<td>Category code</td>
+							<td id="categoryCode">Category code</td>
 						</tr>
 						<c:if test="${ !empty list }">
 							<c:forEach items="${ list }" var="dto">

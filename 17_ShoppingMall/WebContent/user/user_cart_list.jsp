@@ -10,24 +10,24 @@
 </head>
 <body>
 	<jsp:include page="../include/user_top.jsp" />
-		<table class="table">
+		<table class="table align-middle">
 			<tr>
 				<td colspan="7">
-					<h3>장바구니 보기</h3>
+				<h3>장바구니 보기</h3>
 				</td>
 			</tr>
-			<tr class="table-light">
-				<th class="col-1">주문번호</th>
-				<th class="col-1">상품번호</th>
-				<th class="col-2">상품명</th>
-				<th class="col-1">수량</th>
-				<th class="col-1">단가</th>
-				<th class="col-1">합계액</th>
-				<th class="col-1">삭제</th>
+			<tr class="table-light" align="center">
+				<th width="7.5%">주문번호</th>
+				<th width="7.5%">상품번호</th>
+				<th width="25%">상품명</th>
+				<th width="7.5%">수량</th>
+				<th width="12.5%">단가</th>
+				<th width="12.5%">합계액</th>
+				<th width="7.5%">삭제</th>
 			</tr>
 			<c:if test="${ !empty cartList }">
 				<c:forEach items="${ cartList }" var="dto" >
-					<tr>
+					<tr align="center">
 						<td>${ dto.cart_num }</td>
 						<td>${ dto.cart_pnum }</td>
 						<td>

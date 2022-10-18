@@ -36,15 +36,13 @@
 </head>
 <body>
 	<jsp:include page="../include/user_top.jsp" />
-	<table class="table">
+	<div id="nav-table">
+	<table class="table" >
 		<c:if test="${ !empty productCont }">
 			<tr>
 				<td colspan="2">
 					<b>[${ productCont.pname }] 상품 정보</b>
 				</td>
-			</tr>
-			<tr>
-				<td colspan="2" height="30"></td>
 			</tr>
 			<tr>
 				<td>
@@ -83,9 +81,9 @@
 							<tr>
 								<td colspan="2" align="center" >
 									
-									<button type="button" class="iconBtn btn btn-primary btn-lg" onclick="goCart()" >
-									<span class="material-symbols-outlined">add_shopping_cart</span> 장바구니</button>&nbsp;&nbsp;
-									<button type="button" class="iconBtn btn btn-danger btn-lg" onclick="goCart()" >
+									<button type="button" class="iconBtn btn btn-primary" onclick="goCart()" >
+									<span class="material-symbols-outlined">add_shopping_cart</span> 장바구니 담기</button>&nbsp;&nbsp;
+									<button type="button" class="iconBtn btn btn-danger" onclick="goCart()" >
 									<span class="material-symbols-outlined">payments</span> 결제하기</button>
 								</td>							
 							</tr>	
@@ -106,6 +104,7 @@
 			</tr>	
 		</c:if>		
 	</table>
+	</div>
 	<jsp:include page="../include/user_bottom.jsp" />
 </body>
 </html>
