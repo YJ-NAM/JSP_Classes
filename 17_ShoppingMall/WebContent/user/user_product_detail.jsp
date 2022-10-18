@@ -80,7 +80,6 @@
 							</tr>
 							<tr>
 								<td colspan="2" align="center" >
-									
 									<button type="button" class="iconBtn btn btn-primary" onclick="goCart()" >
 									<span class="material-symbols-outlined">add_shopping_cart</span> 장바구니 담기</button>&nbsp;&nbsp;
 									<button type="button" class="iconBtn btn btn-danger" onclick="goCart()" >

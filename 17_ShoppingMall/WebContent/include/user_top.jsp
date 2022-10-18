@@ -81,9 +81,9 @@
 		font-style: normal;
 	}
 	
-	/* 아이콘 버튼 */
-	.iconBtn {
-		vertical-align: baseline;
+	/* 구글아이콘 */
+	.material-symbols-outlined{
+		vertical-align: sub;
 	}
 	
 	/* 오른쪽 가운데 테이블  */
@@ -112,6 +112,7 @@
 		-webkit-text-fill-color: transparent;
 	}
 	
+
 </style>
 </head>
 <body>
