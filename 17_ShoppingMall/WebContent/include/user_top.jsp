@@ -42,6 +42,10 @@
 		vertical-align: sub;
 	}
 	
+	h3 {
+		vertical-align: middle;
+	}
+	
 	a {
 		text-decoration: none;
 	}
@@ -54,7 +58,7 @@
 	}
 	
 	.top:hover {
-		background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+		background: linear-gradient(to right top, #30CFD0 0%, #330867 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -75,6 +79,11 @@
 	#point:hover {
 		color: gray;
 		font-style: normal;
+	}
+	
+	/* 아이콘 버튼 */
+	.iconBtn {
+		vertical-align: middle;
 	}
 	
 </style>

@@ -15,7 +15,7 @@
 <body>
 	<jsp:include page="../include/user_top.jsp" />
 	<div>
-	<h3>Welcome! 🐾Pleasure to meet you🐾</h3>
+	<h3>Welcome to Potter Mall! Pleasure to meet you🐾</h3>
 		<hr />
 		<h4>Product Lists</h4>
 		<hr />
@@ -34,7 +34,7 @@
 					    <p class="card-text">${ dto.pcontents }</p>
 					    <p class="card-text"><b><fmt:formatNumber value="${ dto.price }"/>원</b>
 					    <small id="point"><fmt:formatNumber value="${ dto.point }" var="commaPoint" /> [${ commaPoint }]포인트</small></p>
-					    <a href="${ pageContext.request.contextPath }/user_product.do?pnum=${ dto.pnum }" class="btn btn-primary">상세정보</a>
+					    <a href="${ pageContext.request.contextPath }/user_product_view.do?pnum=${ dto.pnum }" class="btn btn-primary">상세정보</a>
 					  </div>
 					</div>
 				</div>
