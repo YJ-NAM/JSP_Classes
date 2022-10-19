@@ -42,6 +42,10 @@
 		vertical-align: sub;
 	}
 	
+	h3 {
+		vertical-align: middle;
+	}
+	
 	a {
 		text-decoration: none;
 	}
@@ -54,7 +58,7 @@
 	}
 	
 	.top:hover {
-		background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+		background: linear-gradient(to right top, #30CFD0 0%, #330867 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
@@ -77,6 +81,38 @@
 		font-style: normal;
 	}
 	
+	/* 구글아이콘 */
+	.material-symbols-outlined{
+		vertical-align: sub;
+	}
+	
+	/* 오른쪽 가운데 테이블  */
+	#nav-table {
+		width: 700px;
+	}
+	
+	/* 왼쪽 메뉴바 */
+	.sideTable {
+		width: 200px;
+	}
+	
+	.sideTable tr:nth-child(1) {
+		background-color: rgba(48, 207, 208, 0.5);
+
+	}
+	
+	.sideTable #categoryCode {
+		font-size: 1.3em;
+		font-weight: bolder;
+	}
+	
+	#potter {
+		background: linear-gradient(to right top, #30CFD0 0%, #330867 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	
+
 </style>
 </head>
 <body>
@@ -91,10 +127,10 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<table class="table" >
+				<td width="200px">
+					<table class="sideTable table" >
 						<tr>
-							<td>Category code</td>
+							<td id="categoryCode">Category code</td>
 						</tr>
 						<c:if test="${ !empty list }">
 							<c:forEach items="${ list }" var="dto">
