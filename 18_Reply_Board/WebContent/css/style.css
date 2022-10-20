@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+body {
+	font-family: 'Poppins', sans-serif;
+	margin: 0 auto;
+	width: 800px;
+	text-align: center;	
+}
+
+body div h3{
+	font-weight: bolder;
+	
+}
+	

@@ -85,7 +85,7 @@
 			</c:if>
 			<tr> 
 				<td colspan="7"> 
-					<button type="button" class="btn btn-primary" onclick="location.href='bbs_write.do'">글쓰기</button>				
+					<button type="button" class="btn btn-primary" onclick="location.href='view/bbs_write.jsp'">글쓰기</button>				
 				</td>
 			</tr>
 			</tbody>

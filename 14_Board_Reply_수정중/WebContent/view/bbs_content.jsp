@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<c:out value="${ pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +61,7 @@
 		<br>		
 		${ errMsg }	
 		<c:remove var="errMsg"/>
-		<form method="post" action="<%= request.getContextPath() %>/bbs_write.do?no=${ Cont.board_no }" >
+		<form method="post" action="<%= request.getContextPath() %>/view/bbs_write.jsp" >
 			<input type="hidden" name="no" value="${ Cont.board_no }" />
 			<input type="hidden" name="writer" value="${ Cont.board_writer }" />
 			<input type="hidden" name="title" value="${ Cont.board_title }" />
