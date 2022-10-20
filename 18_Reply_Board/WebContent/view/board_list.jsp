@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="time" value="${ System.currentTimeMillis() }" />
+<c:set var="list" value="${ List }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,11 +24,11 @@
 			<tr class="table-primary">
 				<th>글번호</th> <th>글제목</th> <th>최종작성일</th> <th>작성자</th>
 			</tr>
-			<c:if test="${ !empty List }">
-				<c:forEach items="${ List }" var="dto">
+			<c:if test="${ !empty list }">
+				<c:forEach items="${ list }" var="dto">
 				<tr>
 					<td>${ dto.bno }</td>
-					<td>${ dto.title }</td>
+					<td><a href="${ pageContext.request.contextPath }/board_content.do?no=${ dto.bno }">${ dto.title }</a></td>
 					<c:if test="${ !empty dto.regupdate }">
 					<td>${ dto.regupdate.substring(0,10) }</td>
 					</c:if>
@@ -38,7 +39,7 @@
 				</tr>
 				</c:forEach>
 			</c:if>
-			<c:if test="${ empty List }">
+			<c:if test="${ empty list }">
 				<tr>
 					<td colspan="4">검색된 정보가 없습니다...</td>
 				</tr>

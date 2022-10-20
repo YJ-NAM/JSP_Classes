@@ -8,8 +8,11 @@ body {
 	text-align: center;	
 }
 
-body div h3{
+body div h3 {
 	font-weight: bolder;
-	
+}
+
+.table tr td a {
+	text-decoration: none;
 }
 	
