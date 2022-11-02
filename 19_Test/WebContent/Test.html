@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+    let student; // 학생 객체 저장 변수
+
+    function insertStudent() {
+        // 키보드로 학생 정보를 입력 받자
+        let studentName = prompt("학생 이름 입력 : ");
+        let studentNo = prompt("학생 학번 입력 : ");        
+        let studentMajor = prompt("학생 학과 입력 : ");
+        let studentPhone = prompt("학생 연락처 입력 : ");   
+        student = {
+            name : studentName,
+            hakbun : studentNo,
+            major : studentMajor,
+            phone : studentPhone,
+            info : function() {
+                let str = "이름 : "+this.name+"<br>"+
+                          "학번 : "+this.hakbun+"<br>"+
+                          "학과 : "+this.major+"<br>"+
+                          "연락처 : "+this.phone;
+                return str;
+            }
+        }     
+    } // insertStudent() 종료
+
+    function printStudent() {
+        if(student != null) {
+            document.getElementById("output").innerHTML = student.info();
+        }else {
+            alert("학생 정보를 입력해주세요");
+        }
+    }
+</script>
+</head>
+<body>
+    <h3>출력창</h3>
+    <div id="output"></div>
+    <br>
+    <input type="button" value="입력" onclick="insertStudent()" />
+    <input type="button" value="출력" onclick="printStudent()" />
+</body>
+</html>

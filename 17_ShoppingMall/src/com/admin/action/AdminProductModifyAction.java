@@ -24,7 +24,7 @@ public class AdminProductModifyAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		forward.setRedirect(false);
-		forward.setPath("admin/admin_product_modify.jsp");
+		forward.setPath("admin/stay/stay_modify.jsp");
 		
 		return forward;
 	}

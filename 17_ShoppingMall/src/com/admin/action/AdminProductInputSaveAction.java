@@ -62,7 +62,7 @@ public class AdminProductInputSaveAction implements Action {
 			forward.setRedirect(true);
 			forward.setPath("admin_product_list.do");
 		}else {
-			out.println("<script> alert('상품 수정 실패'); history.back(); </script>");
+			out.println("<script> alert('상품 등록 실패'); history.back(); </script>");
 		}
 		return forward;
 	}
